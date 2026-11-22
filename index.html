@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-l="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ساندوا عائلة أبو هاشم | Support the Abu Hashem Family</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@600;800&family=Fraunces:opsz,wght@9..144,600;9..144,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1f2a24; --muted:#5d6a62; --paper:#f7f2ea; --card:#fffdf9; --line:#e6ddcf;
+  --olive:#2f5d46; --olive-2:#3f7a5c; --sand:#efe4d2; --clay:#b5562f; --wa:#1fa855;
+  --r:18px; --shadow:0 1px 2px rgba(31,42,36,.06),0 8px 24px rgba(31,42,36,.07);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.75 "IBM Plex Sans Arabic",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+html[data-l=ar] .en, html[data-l=en] .ar{display:none!important}
+h1,h2,h3{line-height:1.3;margin:0}
+html[data-l=ar] h1,html[data-l=ar] h2{font-family:"Noto Kufi Arabic","IBM Plex Sans Arabic",sans-serif;font-weight:800}
+html[data-l=en] h1,html[data-l=en] h2{font-family:Fraunces,Georgia,serif;font-weight:800;letter-spacing:-.01em}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:10;background:rgba(247,242,234,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font-weight:700;font-size:15px;display:flex;align-items:center;gap:8px}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--clay)}
+.lang{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font:600 14px "IBM Plex Sans Arabic",sans-serif;color:var(--ink);cursor:pointer}
+
+/* hero */
+.hero{padding:36px 0 8px;text-align:center}
+.kicker{display:inline-block;font-size:13px;font-weight:600;color:var(--olive);background:#e3ecdf;border-radius:999px;padding:4px 12px;margin-bottom:14px}
+.hero h1{font-size:clamp(28px,6.4vw,42px)}
+.hero p.lead{color:var(--muted);font-size:18px;max-width:560px;margin:14px auto 0}
+.video{margin:26px auto 0;max-width:380px;border-radius:24px;overflow:hidden;box-shadow:0 20px 50px rgba(31,42,36,.22);background:#000;aspect-ratio:480/864}
+.video video{width:100%;height:100%;object-fit:cover}
+.vcap{font-size:14px;color:var(--muted);margin:12px auto 0;max-width:380px}
+.ctas{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:24px 0 0}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:16px;border-radius:999px;padding:13px 22px;border:0;cursor:pointer;font-family:inherit}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 6px 18px rgba(31,168,85,.3)}
+.btn-ghost{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* goal */
+.goal{margin:34px 0 0;background:var(--olive);color:#fff;border-radius:var(--r);padding:24px;display:grid;gap:6px;text-align:center}
+.goal .amt{font:800 44px/1.1 Fraunces,Georgia,serif;letter-spacing:-.02em}
+.goal p{margin:0;opacity:.9}
+
+section{padding:52px 0 0}
+.eyebrow{font-size:13px;font-weight:700;color:var(--clay);letter-spacing:.04em;margin-bottom:6px}
+html[data-l=en] .eyebrow{text-transform:uppercase}
+section h2{font-size:clamp(24px,5vw,32px);margin-bottom:16px}
+
+/* photo */
+figure{margin:0;background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+figure img{width:100%}
+figcaption{padding:14px 18px;font-size:15px;color:var(--muted)}
+
+/* story */
+.story p{margin:0 0 16px}
+.story p:first-of-type::first-letter{font-weight:700}
+.pull{border-inline-start:4px solid var(--clay);padding:6px 18px;margin:24px 0;font-size:20px;font-weight:600;color:var(--olive)}
+
+
+/* home gallery */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.gallery button{all:unset;cursor:zoom-in;border-radius:14px;overflow:hidden;display:block;background:#ddd}
+.gallery img{width:100%;height:100%;object-fit:cover}
+.gallery .wide{grid-column:1/-1;aspect-ratio:16/7.2}
+.gallery .tall{aspect-ratio:3/4.6}
+.gcap{font-size:14px;color:var(--muted);margin:12px 0 0}
+.lb{position:fixed;inset:0;background:rgba(10,14,12,.92);display:none;place-items:center;z-index:50;padding:16px;cursor:zoom-out}
+.lb.on{display:grid}
+.lb img{max-height:92vh;max-width:100%;border-radius:10px}
+
+
+/* bank */
+.bank{margin-top:18px;background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:22px}
+.bank h3{font-size:18px;margin-bottom:4px}
+.bank .sub{font-size:14px;color:var(--muted);margin:0 0 16px}
+.kv{display:grid;gap:10px}
+.kv .it{border:1px solid var(--line);border-radius:12px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.kv .lbl{font-size:12px;color:var(--muted);font-weight:600}
+.kv .val{font:600 14.5px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;direction:ltr;unicode-bidi:isolate;word-break:normal;overflow-wrap:break-word;letter-spacing:-.01em}
+html[data-l=ar] .kv .val{text-align:right}
+.cp{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 12px;font:600 13px "IBM Plex Sans Arabic",sans-serif;color:var(--olive);cursor:pointer}
+.cur{display:inline-block;font-size:11px;font-weight:700;background:#e3ecdf;color:var(--olive);border-radius:6px;padding:1px 6px;margin-inline-start:6px}
+
+/* family */
+.family{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(min-width:620px){.family{grid-template-columns:repeat(3,1fr)}}
+.person{background:var(--card);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.person img{aspect-ratio:1;object-fit:cover;width:100%}
+.person .b{padding:12px 14px 14px}
+.person h3{font-size:17px}
+.age{font-size:13px;color:var(--clay);font-weight:600}
+.person p{margin:6px 0 0;font-size:14px;line-height:1.6;color:var(--muted)}
+
+/* needs */
+.needs{display:grid;gap:10px}
+.need{background:var(--card);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.need .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.need h3{font-size:16px}
+.need .v{font:700 17px Fraunces,Georgia,serif;color:var(--olive);white-space:nowrap}
+.need p{margin:4px 0 10px;font-size:14px;color:var(--muted);line-height:1.6}
+.track{height:8px;border-radius:99px;background:var(--sand);overflow:hidden}
+.fill{height:100%;background:var(--olive-2);border-radius:99px}
+.note{font-size:13px;color:var(--muted);margin-top:12px}
+
+/* help */
+.steps{display:grid;gap:10px;counter-reset:s;padding:0;margin:0;list-style:none}
+.steps li{background:var(--card);border-radius:14px;padding:14px 18px 14px;box-shadow:var(--shadow);display:flex;gap:14px;align-items:flex-start}
+.steps li::before{counter-increment:s;content:counter(s);flex:none;width:30px;height:30px;border-radius:50%;background:var(--sand);color:var(--olive);font-weight:700;display:grid;place-items:center}
+.contact{margin-top:18px;background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:22px;display:grid;gap:18px;text-align:center}
+.num{font:700 24px/1 "IBM Plex Sans Arabic",sans-serif;direction:ltr;unicode-bidi:isolate;letter-spacing:.02em}
+.row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+#qr{display:grid;place-items:center}
+#qr img,#qr canvas{border:10px solid #fff;border-radius:12px;box-shadow:var(--shadow)}
+.qrcap{font-size:13px;color:var(--muted);margin-top:-6px}
+.toast{position:fixed;inset-inline:0;bottom:22px;margin:auto;width:max-content;background:var(--ink);color:#fff;border-radius:999px;padding:10px 18px;font-size:14px;opacity:0;transform:translateY(10px);transition:.25s;pointer-events:none}
+.toast.on{opacity:1;transform:none}
+
+footer{margin:56px 0 0;padding:36px 0 48px;background:var(--olive);color:#fff;text-align:center}
+footer h2{font-size:26px;margin-bottom:8px}
+footer p{margin:0 auto;max-width:520px;opacity:.9}
+.fixed-wa{position:fixed;bottom:18px;inset-inline-end:18px;width:56px;height:56px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:20}
+.fixed-wa svg{width:28px;height:28px}
+
+.hero-img{margin:26px auto 0;max-width:420px;border-radius:24px;overflow:hidden;box-shadow:0 20px 50px rgba(31,42,36,.22)}
+.hero-img img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top}
+.needs-grid{display:grid;gap:12px}
+.ng{background:var(--card);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.ng h3{font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.ng h3 .ic{width:30px;height:30px;border-radius:50%;background:var(--sand);display:grid;place-items:center;font-size:16px;flex:none}
+.ng ul{margin:0;padding-inline-start:20px;color:var(--muted);font-size:15px;line-height:1.8}
+.person .needs-mini{margin-top:8px;font-size:13px;color:var(--clay);font-weight:600}
+.family.three{grid-template-columns:repeat(2,1fr)}
+@media(min-width:620px){.family.three{grid-template-columns:repeat(3,1fr)}}
+.bank{margin-top:18px;background:var(--card);border-radius:var(--r);box-shadow:var(--shadow);padding:22px}
+.bank h3{font-size:18px;margin-bottom:4px}
+.bank .sub{font-size:14px;color:var(--muted);margin:0 0 16px}
+.kv{display:grid;gap:10px}
+.kv .it{border:1px solid var(--line);border-radius:12px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.kv .lbl{font-size:12px;color:var(--muted);font-weight:600}
+.kv .val{font:600 14.5px/1.45 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;direction:ltr;unicode-bidi:isolate;word-break:normal;overflow-wrap:break-word;letter-spacing:-.01em}
+html[data-l=ar] .kv .val{text-align:right}
+.cp{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 12px;font:600 13px "IBM Plex Sans Arabic",sans-serif;color:var(--olive);cursor:pointer}
+.cur{display:inline-block;font-size:11px;font-weight:700;background:#e3ecdf;color:var(--olive);border-radius:6px;padding:1px 6px;margin-inline-start:6px}
+.pending{border:2px dashed var(--clay);background:#fbeee7;color:var(--clay);border-radius:14px;padding:14px 18px;font-weight:600;font-size:14px;text-align:center;margin-top:18px}
+[hidden]{display:none!important}
+.sub-h{font-size:16px;margin:22px 0 10px;color:var(--olive)}
+.family.kids{grid-template-columns:repeat(3,1fr);gap:8px}
+@media(min-width:620px){.family.kids{grid-template-columns:repeat(5,1fr)}}
+.person.sm .b{padding:8px 10px 10px}
+.person.sm h3{font-size:14px}
+.person.sm .age{font-size:12px}
+.person.sm p{font-size:12px;line-height:1.5;margin-top:4px}
+.ng.urgent{border-inline-start:4px solid var(--clay)}
+
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.93 9.93 0 0 0-8.5 15.06L2 22l5.07-1.5A9.94 9.94 0 1 0 12.04 2Zm0 18.13a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.01.89.9-2.93-.2-.31a8.19 8.19 0 1 1 6.79 3.68Zm4.5-6.13c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.17.25-.64.8-.78.97-.14.16-.29.18-.53.06a6.7 6.7 0 0 1-3.34-2.92c-.25-.43.25-.4.72-1.34.08-.16.04-.3-.02-.42-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.74 2.74 0 0 0-.86 2.04 4.76 4.76 0 0 0 1 2.53 10.9 10.9 0 0 0 4.18 3.69c1.55.67 2.16.73 2.94.61.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+</svg>
+
+<header class="bar"><div class="wrap">
+  <div class="brand"><span class="dot"></span><span class="ar">عائلة أبو هاشم · مواصي خان يونس</span><span class="en">Abu Hashem Family · Al-Mawasi</span></div>
+  <button class="lang" id="lang" type="button"><span class="ar">English</span><span class="en">العربية</span></button>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <span class="kicker"><span class="ar">نداء من غزة</span><span class="en">An appeal from Gaza</span></span>
+    <h1><span class="ar">امرأة واحدة تحمل 18 نفساً وحدها، ساندوها</span><span class="en">One woman is carrying a family of 18 on her own. Help her.</span></h1>
+    <p class="lead"><span class="ar">عائلة أبو هاشم، نازحة من رفح إلى مواصي خان يونس على شاطئ البحر. معيلتها ترعى زوجها وأطفالها، وأمها المسنّة المصابة بسرطان البنكرياس، وأختها اليتيمة المصابة بشلل نصفي.</span><span class="en">The Abu Hashem family, displaced from Rafah to Al-Mawasi, Khan Younis, on the seashore. The woman who supports them cares for her husband and children, her elderly mother with pancreatic cancer, and her fatherless sister who lives with hemiplegia.</span></p>
+    <div class="hero-img"><img src="hero.jpg" alt="الحاجة وداد شقفة على سرير المستشفى"></div>
+    <p class="vcap"><span class="ar">الحاجة وداد، 73 عاماً، تتلقى العلاج من سرطان البنكرياس.</span><span class="en">Hajja Wedad, 73, receiving treatment for pancreatic cancer.</span></p>
+    <div class="ctas">
+      <a class="btn btn-wa" data-wa href="#contact" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span class="ar">تواصل معنا للتبرع</span><span class="en">Message us to donate</span></a>
+      <a class="btn btn-ghost" href="#bank"><span class="ar">التبرع بتحويل بنكي</span><span class="en">Donate by bank transfer</span></a>
+    </div>
+  </div>
+
+  <div class="goal" id="goal" hidden>
+    <span class="ar">هدفنا</span><span class="en">Our goal</span>
+    <div class="amt" id="goalAmt"></div>
+    <p><span class="ar">لتأمين علاج الحاجة وداد، واحتياجات فاتن، وطعام الأطفال وملابسهم، وتعليم الأبناء، وماكينة خياطة تعيد للعائلة مصدر رزقها.</span><span class="en">To cover Hajja Wedad's treatment, Faten's needs, the children's food and clothing, the students' education, and a sewing machine to restore the family's income.</span></p>
+  </div>
+
+  <section id="story" class="story">
+    <div class="eyebrow"><span class="ar">قصتنا</span><span class="en">Our story</span></div>
+    <h2><span class="ar">من الشوكة في رفح إلى مواصي خان يونس على شاطئ البحر</span><span class="en">From Al-Shawka in Rafah to the seashore of Al-Mawasi</span></h2>
+    <div class="ar">
+      <p>نحن عائلة أبو هاشم من الشوكة في رفح. أجبرتنا الحرب على النزوح، فانتهى بنا الحال في مواصي خان يونس على شاطئ البحر. عددنا ثمانية عشر نفساً، وتعيلنا امرأة واحدة.</p>
+      <p>هذه المرأة هي أمان، ترعى زوجها وأطفالها. زوجها مهدي خيّاط، لكن أدوات عمله ضاعت تحت الركام، فلم يعد له عمل ولا دخل. وفوق ذلك ترعى أمها الحاجة وداد، ذات الثلاثة والسبعين عاماً، المصابة بسرطان البنكرياس. وترعى أختها فاتن، ذات الخمسة والثلاثين عاماً، اليتيمة المقعدة التي تعيش مع شلل نصفي.</p>
+      <p class="pull">ثمانية عشر نفساً، ومريضة سرطان، وأخت مقعدة، وكلهم على كتفي امرأة واحدة.</p>
+      <p>ابنها بلال بلا عمل بسبب الحرب، وكُسرت ساقاه في حادث سير فصار يعيش ببلاتين دائم. ومعنا شابان متزوجان لديهما خمسة أطفال صغار، بينهم رضيعان، يحتاجون الحليب والحفاضات والملابس والأحذية. الصغيرة ورد، ذات العام الواحد، تعاني من سوء تغذية حاد، ويارا ذات الثماني سنوات مريضة بعيب خلقي في القلب. ولدينا أربعة طلاب: جنة في التوجيهي تحتاج دروس تقوية وقرطاسية وآلة حاسبة، ويوسف في الصف الثامن، وحبيبة في الصف الرابع، ويارا التي حُرمت من التعليم ثلاث سنوات وتحتاج دروس تأسيس. وكلهم يحتاجون ملابس شتوية. والأمهات يحتجن ما تحتاجه كل امرأة من ملابس وأدوات صحية ومنظفات.</p>
+      <p>نحن عائلة مستورة، ونعيش ظروفاً صعبة جداً. أي مساعدة منكم، مهما كانت صغيرة، تسند هذه المرأة التي تحمل ثمانية عشر نفساً وحدها. جزاكم الله كل خير.</p>
+    </div>
+    <div class="en">
+      <p>We are the Abu Hashem family from Al-Shawka in Rafah. The war forced us from our home, and we ended up in Al-Mawasi, Khan Younis, on the seashore. There are eighteen of us, and one woman supports us all.</p>
+      <p>Her name is Aman. She cares for her husband and children; her husband Mahdi is a tailor, but his tools were lost under the rubble, leaving him with no work and no income. On top of that, she cares for her mother, Hajja Wedad, 73, who has pancreatic cancer, and for her sister Faten, 35, who lost her father and lives with hemiplegia.</p>
+      <p class="pull">Eighteen people, a mother with cancer, a sister who cannot walk, all resting on one woman's shoulders.</p>
+      <p>Her son Bilal has been out of work since the war, and a road accident broke both his legs, leaving him with permanent metal implants. Two young married men in the family have five small children between them, including two infants, who need milk, diapers, clothes and shoes. Little Ward, just one year old, suffers from severe malnutrition, and eight-year-old Yara was born with a heart defect. And there are four students: Jana, in her final year of high school (Tawjihi), needs tutoring, stationery and a calculator; Yousef is in eighth grade; Habiba is in fourth grade; and Yara, who has missed three years of school, needs foundation lessons. All of them need winter clothes. The mothers need what every woman needs: clothing, hygiene products and cleaning supplies.</p>
+      <p>We are a family that has always lived with dignity, and our circumstances are now very hard. Any help, however small, supports this woman who is carrying eighteen people on her own. May God reward you.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow"><span class="ar">تعرّفوا علينا</span><span class="en">Meet us</span></div>
+    <h2><span class="ar">ثمانية عشر نفساً في رعاية امرأة واحدة</span><span class="en">Eighteen people in one woman's care</span></h2>
+    <h3 class="sub-h"><span class="ar">الكبار</span><span class="en">The adults</span></h3>
+    <div class="family three">
+      <div class="person"><img src="caregiver.jpg" alt=""><div class="b">
+        <h3><span class="ar">أمان يوسف شقفة</span><span class="en">Aman Yousef Shaqfa</span></h3>
+        <div class="age"><span class="ar">المعيلة · 53 عاماً</span><span class="en">Provider · 53</span></div>
+        <p><span class="ar">ابنة الحاجة وداد. تعيل ثمانية عشر نفساً، وترعى أمها المريضة وأختها المقعدة.</span><span class="en">Hajja Wedad's daughter. She supports eighteen people and cares for her sick mother and disabled sister.</span></p></div></div>
+      <div class="person"><img src="wedad.jpg" alt=""><div class="b">
+        <h3><span class="ar">الحاجة وداد جميل شقفة</span><span class="en">Hajja Wedad Jamil Shaqfa</span></h3>
+        <div class="age"><span class="ar">والدة أمان · 73 عاماً</span><span class="en">Aman's mother · 73</span></div>
+        <p><span class="ar">مريضة بسرطان البنكرياس، وتحتاج علاجاً وأدوية وتغذية خاصة.</span><span class="en">Has pancreatic cancer and needs treatment, medicine and special nutrition.</span></p></div></div>
+      <div class="person"><img src="faten.jpg" alt=""><div class="b">
+        <h3><span class="ar">فاتن يوسف شقفة</span><span class="en">Faten Yousef Shaqfa</span></h3>
+        <div class="age"><span class="ar">أخت أمان · 35 عاماً</span><span class="en">Aman's sister · 35</span></div>
+        <p><span class="ar">يتيمة ومقعدة بشلل نصفي، وتحتاج كرسياً متحركاً ومستلزمات صحية.</span><span class="en">Fatherless and living with hemiplegia; needs a wheelchair and medical supplies.</span></p></div></div>
+      <div class="person"><img src="mahdi.jpg" alt=""><div class="b">
+        <h3><span class="ar">مهدي زكي أبو هاشم</span><span class="en">Mahdi Zaki Abu Hashem</span></h3>
+        <div class="age"><span class="ar">زوج أمان · 56 عاماً</span><span class="en">Aman's husband · 56</span></div>
+        <p><span class="ar">خيّاط فقد أدوات عمله تحت الركام، ويحتاج ماكينة خياطة ليعود إلى العمل.</span><span class="en">A tailor who lost his tools under the rubble; needs a sewing machine to work again.</span></p></div></div>
+      <div class="person"><img src="bilal.jpg" alt=""><div class="b">
+        <h3><span class="ar">بلال مهدي أبو هاشم</span><span class="en">Bilal Mahdi Abu Hashem</span></h3>
+        <div class="age"><span class="ar">ابن أمان ومهدي · 27 عاماً</span><span class="en">Aman and Mahdi's son · 27</span></div>
+        <p><span class="ar">بلا عمل بسبب الحرب، وكُسرت ساقاه في حادث سير فرُكّب له بلاتين داخلي دائم، ويحتاج رعاية صحية.</span><span class="en">Out of work because of the war; both legs were broken in a road accident and fixed with permanent internal plates. Needs medical care.</span></p></div></div>
+      <div class="person"><img src="noura.jpg" alt=""><div class="b">
+        <h3><span class="ar">نورا أشرف سيد أحمد</span><span class="en">Noura Ashraf Sayed Ahmed</span></h3>
+        
+        <p><span class="ar">تعاني من فقر الدم، وتحتاج رعاية صحية ومستلزمات الحياة الأساسية.</span><span class="en">Suffers from anaemia; needs medical care and basic necessities.</span></p></div></div>
+      <div class="person"><img src="doha.jpg" alt=""><div class="b">
+        <h3><span class="ar">ضحى عمر شقفة</span><span class="en">Doha Omar Shaqfa</span></h3>
+        <div class="age"><span class="ar">23 عاماً</span><span class="en">23</span></div>
+        <p><span class="ar">تحتاج مستلزمات العناية النسائية وكسوة ملابس.</span><span class="en">Needs women's care products and clothing.</span></p></div></div>
+    </div>
+    <h3 class="sub-h"><span class="ar">الطلاب</span><span class="en">The students</span></h3>
+    <div class="family three">
+      <div class="person"><img src="jana.jpg" alt=""><div class="b">
+        <h3><span class="ar">جنة مهدي أبو هاشم</span><span class="en">Jana Mahdi Abu Hashem</span></h3>
+        <div class="age"><span class="ar">ابنة أمان ومهدي · 17 عاماً</span><span class="en">Aman and Mahdi's daughter · 17</span></div>
+        <p><span class="ar">طالبة توجيهي، تحتاج دروس تقوية وقرطاسية وآلة حاسبة.</span><span class="en">Tawjihi student; needs tutoring, stationery and a calculator.</span></p></div></div>
+      <div class="person"><img src="yousef.jpg" alt=""><div class="b">
+        <h3><span class="ar">يوسف مهدي أبو هاشم</span><span class="en">Yousef Mahdi Abu Hashem</span></h3>
+        <div class="age"><span class="ar">ابن أمان ومهدي · 13 عاماً</span><span class="en">Aman and Mahdi's son · 13</span></div>
+        <p><span class="ar">في الصف الثامن، يحتاج دروساً خصوصية وقرطاسية وملابس شتوية.</span><span class="en">In eighth grade; needs private lessons, stationery and winter clothes.</span></p></div></div>
+      <div class="person"><img src="habiba.jpg" alt=""><div class="b">
+        <h3><span class="ar">حبيبة بلال أبو هاشم</span><span class="en">Habiba Bilal Abu Hashem</span></h3>
+        <div class="age"><span class="ar">ابنة بلال · الصف الرابع</span><span class="en">Bilal's daughter · 4th grade</span></div>
+        <p><span class="ar">تحتاج دروس تقوية بتكلفة 200 شيكل شهرياً، وقرطاسية، وملابس شتوية.</span><span class="en">Needs tutoring (₪200 a month), stationery and winter clothes.</span></p></div></div>
+      <div class="person"><img src="yara.jpg" alt=""><div class="b">
+        <h3><span class="ar">يارا بلال أبو هاشم</span><span class="en">Yara Bilal Abu Hashem</span></h3>
+        <div class="age"><span class="ar">ابنة بلال · 8 سنوات</span><span class="en">Bilal's daughter · 8</span></div>
+        <p><span class="ar">مريضة بعيب خلقي في القلب، حُرمت من التعليم ثلاث سنوات، وتحتاج دروس تأسيس بتكلفة 200 شيكل شهرياً، وملابس شتوية.</span><span class="en">Born with a heart defect and out of school for three years; needs foundation lessons (₪200 a month) and winter clothes.</span></p></div></div>
+    </div>
+    <h3 class="sub-h"><span class="ar">الصغار</span><span class="en">The little ones</span></h3>
+    <div class="family kids">
+      <div class="person sm"><img src="karim.jpg" alt=""><div class="b">
+        <h3><span class="ar">كريم بلال</span><span class="en">Karim Bilal</span></h3>
+        <div class="age"><span class="ar">سنتان</span><span class="en">2 years</span></div>
+        <p><span class="ar">حفاضات وملابس شتوية</span><span class="en">Diapers and winter clothes</span></p></div></div>
+      <div class="person sm"><img src="ward.jpg" alt=""><div class="b">
+        <h3><span class="ar">ورد محمد</span><span class="en">Ward Mohammed</span></h3>
+        <div class="age"><span class="ar">سنة واحدة</span><span class="en">1 year</span></div>
+        <p><span class="ar">تعاني من سوء تغذية حاد. حفاضات وملابس شتوية</span><span class="en">Severe malnutrition. Diapers and winter clothes</span></p></div></div>
+      <div class="person sm"><img src="mahdijr.jpg" alt=""><div class="b">
+        <h3><span class="ar">مهدي محمد</span><span class="en">Mahdi Mohammed</span></h3>
+        <div class="age"><span class="ar">رضيع</span><span class="en">Infant</span></div>
+        <p><span class="ar">حليب وحفاضات وكسوة شتوية</span><span class="en">Milk, diapers and winter clothes</span></p></div></div>
+      <div class="person sm"><img src="amira.jpg" alt=""><div class="b">
+        <h3><span class="ar">أميرة بلال</span><span class="en">Amira Bilal</span></h3>
+        <div class="age"><span class="ar">5 أشهر</span><span class="en">5 months</span></div>
+        <p><span class="ar">حليب صناعي وحفاضات وملابس شتوية</span><span class="en">Formula, diapers and winter clothes</span></p></div></div>
+      <div class="person sm"><img src="ayman.jpg" alt=""><div class="b">
+        <h3><span class="ar">أيمن يوسف شقفة</span><span class="en">Ayman Yousef Shaqfa</span></h3>
+        <div class="age"><span class="ar">4 أشهر</span><span class="en">4 months</span></div>
+        <p><span class="ar">حليب أطفال وحفاضات وملابس شتوية</span><span class="en">Baby milk, diapers and winter clothes</span></p></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow"><span class="ar">احتياجاتنا</span><span class="en">What we need</span></div>
+    <h2><span class="ar">أين سيذهب دعمكم</span><span class="en">Where your support goes</span></h2>
+    <div class="needs-grid">
+      <div class="ng urgent"><h3><span class="ic">🩺</span><span class="ar">العلاج والرعاية الصحية</span><span class="en">Medical treatment and care</span></h3><ul>
+        <li><span class="ar">الحاجة وداد (سرطان البنكرياس): علاج كيماوي، وأدوية، ومسكنات، وتحويلة للعلاج خارج غزة، وتغذية خاصة، ومواصلات للمستشفى</span><span class="en">Hajja Wedad (pancreatic cancer): chemotherapy, medicine, pain relief, a referral for treatment outside Gaza, special nutrition and transport to hospital</span></li>
+        <li><span class="ar">فاتن (شلل نصفي): كرسي متحرك، وأكياس بول، وحفاضات للكبار، ومستلزمات صحية</span><span class="en">Faten (hemiplegia): a wheelchair, urine bags, adult diapers and medical supplies</span></li>
+        <li><span class="ar">ورد، سنة واحدة: علاج سوء التغذية الحاد وغذاء علاجي</span><span class="en">Ward, 1: treatment and therapeutic food for severe malnutrition</span></li>
+        <li><span class="ar">يارا، 8 سنوات: متابعة عيب القلب الخلقي</span><span class="en">Yara, 8: follow-up care for her congenital heart defect</span></li>
+        <li><span class="ar">بلال: رعاية صحية بعد كسر ساقيه وتركيب البلاتين</span><span class="en">Bilal: medical care after his leg fractures and implants</span></li>
+        <li><span class="ar">نورا: علاج فقر الدم</span><span class="en">Noura: treatment for anaemia</span></li></ul></div>
+      <div class="ng"><h3><span class="ic">🍼</span><span class="ar">خمسة أطفال رضّع وصغار</span><span class="en">Five babies and toddlers</span></h3><ul>
+        <li><span class="ar">حليب أطفال وحليب صناعي</span><span class="en">Baby milk and formula</span></li>
+        <li><span class="ar">حفاضات</span><span class="en">Diapers</span></li>
+        <li><span class="ar">ملابس شتوية وأحذية</span><span class="en">Winter clothes and shoes</span></li></ul></div>
+      <div class="ng"><h3><span class="ic">📚</span><span class="ar">تعليم أربعة طلاب</span><span class="en">Education for four students</span></h3><ul>
+        <li><span class="ar">جنة، توجيهي: دروس تقوية، وقرطاسية، وآلة حاسبة</span><span class="en">Jana, Tawjihi: tutoring, stationery and a calculator</span></li>
+        <li><span class="ar">يوسف، الصف الثامن: دروس خصوصية وقرطاسية</span><span class="en">Yousef, 8th grade: private lessons and stationery</span></li>
+        <li><span class="ar">حبيبة، الصف الرابع: دروس تقوية بتكلفة 200 شيكل شهرياً، وقرطاسية</span><span class="en">Habiba, 4th grade: tutoring at ₪200 a month, and stationery</span></li>
+        <li><span class="ar">يارا، 8 سنوات: دروس تأسيس بتكلفة 200 شيكل شهرياً، بعد ثلاث سنوات بلا تعليم</span><span class="en">Yara, 8: foundation lessons at ₪200 a month, after three years without school</span></li>
+        <li><span class="ar">ملابس شتوية للطلاب الأربعة</span><span class="en">Winter clothes for all four</span></li></ul></div>
+      <div class="ng"><h3><span class="ic">🧵</span><span class="ar">مصدر رزق للعائلة</span><span class="en">A livelihood for the family</span></h3><ul>
+        <li><span class="ar">ماكينة خياطة لمهدي، ليعود إلى عمله ويعيل العائلة</span><span class="en">A sewing machine for Mahdi, so he can work and support the family again</span></li></ul></div>
+      <div class="ng"><h3><span class="ic">🧺</span><span class="ar">النساء والبيت</span><span class="en">The women and household</span></h3><ul>
+        <li><span class="ar">كسوة ملابس</span><span class="en">Clothing</span></li>
+        <li><span class="ar">مستلزمات العناية النسائية</span><span class="en">Women's care and hygiene products</span></li>
+        <li><span class="ar">منظفات</span><span class="en">Cleaning supplies</span></li></ul></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="eyebrow"><span class="ar">كيف تساعد</span><span class="en">How to help</span></div>
+    <h2><span class="ar">ثلاث طرق للمساعدة</span><span class="en">Three ways to help</span></h2>
+    <ol class="steps">
+      <li><div><strong><span class="ar">تبرّع</span><span class="en">Donate</span></strong><br><span class="ar">حوّل مباشرة إلى حساب العائلة البنكي، أو راسلنا على واتساب لنرتّب معك طريقة أخرى.</span><span class="en">Transfer directly to the family's bank account, or message us on WhatsApp to arrange another way.</span></div></li>
+      <li><div><strong><span class="ar">شارك الصفحة</span><span class="en">Share this page</span></strong><br><span class="ar">أرسلها لأصدقائك وعائلتك، فكل مشاركة قد توصلنا إلى من يستطيع المساعدة.</span><span class="en">Send it to friends and family; every share can reach someone who can help.</span></div></li>
+      <li><div><strong><span class="ar">ادعُ لنا</span><span class="en">Keep us in your prayers</span></strong><br><span class="ar">دعاء صادق بالشفاء للحاجة وداد يعني لنا الكثير.</span><span class="en">A sincere prayer for Hajja Wedad's recovery means a lot to us.</span></div></li>
+    </ol>
+
+    <div class="bank" id="bank" hidden>
+      <h3><span class="ar">التبرع بالتحويل البنكي</span><span class="en">Donate by bank transfer</span></h3>
+      <p class="sub"><span class="ar">يمكنك التحويل مباشرة إلى حساب العائلة من أي بنك في العالم.</span><span class="en">You can transfer directly to the family's account from any bank worldwide.</span></p>
+      <div class="kv" id="kv"></div>
+      <p class="note"><span class="ar">بعد التحويل، يسعدنا أن تراسلنا على واتساب لنشكرك ونؤكد وصول تبرعك.</span><span class="en">After transferring, please message us on WhatsApp so we can thank you and confirm it arrived.</span></p>
+    </div>
+
+    <div class="contact" id="contactBox" hidden>
+      <div><div style="font-size:14px;color:var(--muted)"><span class="ar">رقم الواتساب</span><span class="en">WhatsApp number</span></div><div class="num" id="num"></div></div>
+      <div class="row">
+        <a class="btn btn-wa" data-wa href="#" target="_blank" rel="noopener"><svg><use href="#wa"/></svg><span class="ar">افتح واتساب</span><span class="en">Open WhatsApp</span></a>
+        <a class="btn btn-ghost" id="ig" href="#" target="_blank" rel="noopener" hidden><span class="ar">إنستغرام</span><span class="en">Instagram</span></a>
+        <a class="btn btn-ghost" id="fb" href="#" target="_blank" rel="noopener" hidden><span class="ar">فيسبوك</span><span class="en">Facebook</span></a>
+        <button class="btn btn-ghost" type="button" id="copyNum"><span class="ar">نسخ الرقم</span><span class="en">Copy number</span></button>
+      </div>
+      <div id="qr"></div>
+      <div class="qrcap"><span class="ar">امسح الرمز بكاميرا هاتفك لفتح محادثة واتساب</span><span class="en">Scan with your phone camera to open a WhatsApp chat</span></div>
+    </div>
+
+    <div class="pending" id="pending" hidden></div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <h2><span class="ar">شكراً لكم من القلب</span><span class="en">Thank you, from our hearts</span></h2>
+  <p><span class="ar">شكراً لكل من قرأ قصتنا، وتبرّع، وشارك. أنتم تسندون من يسندنا.</span><span class="en">Thank you to everyone who read our story, gave, and shared. You are holding up the one who holds us up.</span></p>
+  <p style="margin-top:14px;opacity:.75;font-size:14px"><span class="ar">عائلة أبو هاشم</span><span class="en">The Abu Hashem family</span></p>
+</div></footer>
+
+<a class="fixed-wa" data-wa href="#contact" target="_blank" rel="noopener" aria-label="WhatsApp" style="color:#fff" hidden><svg><use href="#wa"/></svg></a>
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const D=(typeof PAGE_DATA!=='undefined')?PAGE_DATA:{};
+const root=document.documentElement, $=id=>document.getElementById(id);
+function setLang(l){root.dataset.l=l;root.lang=l;root.dir=l==='ar'?'rtl':'ltr';try{localStorage.setItem('lang',l)}catch(e){}}
+let saved=null;try{saved=localStorage.getItem('lang')}catch(e){}
+setLang(saved||((navigator.language||'').toLowerCase().startsWith('ar')?'ar':'en'));
+$('lang').onclick=()=>setLang(root.dataset.l==='ar'?'en':'ar');
+const toast=$('toast');function show(t){toast.textContent=t;toast.classList.add('on');setTimeout(()=>toast.classList.remove('on'),1800)}
+async function copy(v){const ar=root.dataset.l==='ar';try{await navigator.clipboard.writeText(v);show(ar?'تم النسخ':'Copied')}catch(e){show(v)}}
+const clean=s=>String(s||'').replace(/\s+/g,'');
+const group=s=>clean(s).replace(/(.{4})/g,'$1 ').trim();
+let missing=false;const miss=[];
+// goal
+if(clean(D.goal)){$('goal').hidden=false;$('goalAmt').textContent='$'+Number(clean(D.goal)).toLocaleString('en-US')}else{missing=true;miss.push(['المبلغ المطلوب','goal amount'])}
+// whatsapp
+const wa=clean(D.whatsapp).replace(/^\+/,'').replace(/^00/,'');
+if(wa){
+  const url='https://wa.me/'+wa;
+  document.querySelectorAll('[data-wa]').forEach(a=>{a.href=url;a.hidden=false});
+  $('contactBox').hidden=false;
+  $('num').textContent='+'+wa;
+  $('copyNum').onclick=()=>copy('+'+wa);
+  try{new QRCode($('qr'),{text:url,width:160,height:160,colorDark:'#1f2a24',colorLight:'#ffffff'})}catch(e){}
+}else{missing=true;miss.push(['رقم الواتساب','WhatsApp number']);document.querySelectorAll('.btn[data-wa]').forEach(a=>a.removeAttribute('target'))}
+if(D.instagram){$('ig').href=D.instagram;$('ig').hidden=false}
+if(D.facebook){$('fb').href=D.facebook;$('fb').hidden=false}
+// bank
+const rows=[
+  ['اسم صاحب الحساب','Account holder',D.bankHolder,D.bankHolder,''],
+  ['البنك','Bank',D.bankName,D.bankName,''],
+  ['رمز SWIFT','SWIFT / BIC',clean(D.swift),clean(D.swift),''],
+  ['IBAN بالدولار','IBAN (US dollars)',clean(D.ibanUSD),group(D.ibanUSD),'USD'],
+  ['IBAN باليورو','IBAN (euros)',clean(D.ibanEUR),group(D.ibanEUR),'EUR'],
+  ['IBAN بالشيكل','IBAN (shekels)',clean(D.ibanILS),group(D.ibanILS),'ILS'],
+].filter(r=>r[2]);
+const hasIban=rows.some(r=>r[4]);
+if(hasIban){
+  $('bank').hidden=false;
+  $('kv').innerHTML=rows.map(r=>`<div class="it"><div><div class="lbl"><span class="ar">${r[0]}</span><span class="en">${r[1]}</span>${r[4]?`<span class="cur">${r[4]}</span>`:''}</div><div class="val">${r[3]}</div></div><button class="cp" type="button" data-copy="${r[2]}"><span class="ar">نسخ</span><span class="en">Copy</span></button></div>`).join('');
+  document.querySelectorAll('[data-copy]').forEach(btn=>btn.onclick=()=>copy(btn.dataset.copy));
+}else{missing=true;document.querySelectorAll('a[href="#bank"]').forEach(a=>a.hidden=true)}
+$('pending').hidden=!missing;
+if(missing)$('pending').innerHTML='<span class="ar">مسودة: بانتظار '+miss.map(m=>m[0]).join('، ')+'</span><span class="en">Draft: still waiting for '+miss.map(m=>m[1]).join(', ')+'</span>';
+</script>
+</body>
+</html>
